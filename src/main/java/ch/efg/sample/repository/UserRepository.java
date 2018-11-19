@@ -11,6 +11,7 @@ import java.util.stream.StreamSupport;
 @Repository
 public class UserRepository implements IUserRepository<IUser, String> {
 
+    // Since api returns List for findById, collection that allows duplicates is used.
     private List<IUser> persistance = new CopyOnWriteArrayList<>();
 
     public List<IUser> findAll() {
@@ -35,6 +36,7 @@ public class UserRepository implements IUserRepository<IUser, String> {
         return var1;
     }
 
+    // Since delete returns only one user, delete only first occurence.
     public IUser delete(String var1) {
         Optional<IUser> found = persistance.stream()
                 .filter(e -> Objects.equals(e.getId(), var1))
