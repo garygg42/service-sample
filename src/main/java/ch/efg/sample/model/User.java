@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class User implements IUser {
 
+    // Since id is strictly defined, unclude only this field in equals and hash code.
     @EqualsAndHashCode.Include
     public String id;
 
