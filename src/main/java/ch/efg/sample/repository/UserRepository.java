@@ -11,7 +11,7 @@ import java.util.stream.StreamSupport;
 @Repository
 public class UserRepository implements IUserRepository<IUser, String> {
 
-    private CopyOnWriteArrayList<IUser> persistance = new CopyOnWriteArrayList<>();
+    private List<IUser> persistance = new CopyOnWriteArrayList<>();
 
     public List<IUser> findAll() {
         return new ArrayList<>(persistance);
