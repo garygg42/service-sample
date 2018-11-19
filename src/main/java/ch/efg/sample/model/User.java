@@ -9,7 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public class User implements IUser, Comparable {
+public class User implements IUser {
 
     @EqualsAndHashCode.Include
     public String id;
@@ -17,9 +17,4 @@ public class User implements IUser, Comparable {
     public String name;
 
     public String groupId;
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 }

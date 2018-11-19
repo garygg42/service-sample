@@ -24,9 +24,6 @@ public class UserServiceTest {
     @Autowired
     UserService userService;
 
-    @Autowired
-    UserRepository userRepository;
-
     @Test
     public void shouldSaveAndFind() {
         userService.save(new User("1", "John Smith", "1"));
